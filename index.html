@@ -1,47 +1,89 @@
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The web site of uhhkiko</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
- <script async custom-element="amp-call-tracking" src="https://cdn.ampproject.org/v0/amp-call-tracking-0.1.js"></script> 
-  </head>
-  <body>
-    <h1>Welcome to my Website!</h1>
+<!doctype html>
+<html amp lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CallRail AMP Integration Test</title>
+  <link rel="canonical" href="https://yourdomain.com/amp-test-page/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+  <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
-    <p class="has-text-align-center"><strong>0001</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0001<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180001">678-818-0001</a></p>
-    
-    <p class="has-text-align-center"><strong>0002</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0002<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180002">678-818-0002</a></p>
-    
-    <p class="has-text-align-center"><strong>0003</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0003<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180003">678-818-0003</a></p>
-    
-    <p class="has-text-align-center"><strong>0004</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0004<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180004">678-818-0004</a></p>
-    
-    <p class="has-text-align-center"><strong>0005</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0005<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180005">678-818-0005</a></p>
-    
-    <p class="has-text-align-center"><strong>0006</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0006<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180006">678-818-0006</a></p>
+  <!-- Required AMP components for CallRail -->
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-call-tracking" src="https://cdn.ampproject.org/v0/amp-call-tracking-0.1.js"></script>
 
+  <style amp-custom>
+    /* Use Tailwind CSS equivalent classes for styling */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 2.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937;
+      margin-bottom: 1rem;
+    }
+    .phone-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #10b981;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .cta-button {
+      background-color: #10b981;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
+    }
+    .cta-button:hover {
+      background-color: #059669;
+    }
+  </style>
+</head>
+<body>
 
-    <p class="has-text-align-center"><strong>External Form</strong></p>
+  <div class="container">
+    <h1>Call us to get started!</h1>
 
-		  
-    <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
+    <!-- The CallRail AMP swap target you provided -->
+    <amp-analytics config="https://swappy.blackwood-mountain.eks.qa-callrail.com/companies/577025309/amp-analytics.json?cid=CLIENT_ID(cid-scope-cookie-fallback-name)">
+    </amp-analytics>
+    <amp-call-tracking config="https://swappy.blackwood-mountain.eks.qa-callrail.com/companies/577025309/amp-swap.json?t=%2B16788180006&cid=CLIENT_ID(cid-scope-cookie-fallback-name)&iso=US">
+      <div class="phone-text">
+        <a href="tel:+16788180006">678-818-0006</a>
+      </div>
+    </amp-call-tracking>
 
-	  <amp-analytics config="https://swappy.blackwood-mountain.eks.qa-callrail.com/companies/577025309/amp-analytics.json?cid=CLIENT_ID(cid-scope-cookie-fallback-name)">
-</amp-analytics>
- <amp-call-tracking config="https://swappy.blackwood-mountain.eks.qa-callrail.com/companies/577025309/amp-swap.json?t=%2B16788180006&cid=CLIENT_ID(cid-scope-cookie-fallback-name)&iso=US">
-  <a href="tel:+16788180006">678-818-0006</a>
-</amp-call-tracking> 
-    
-  </body>
+    <p>This phone number will dynamically change for tracked visitors.</p>
+
+    <!-- Simple call to action button -->
+    <a href="tel:+16788180006" class="cta-button">Call Now</a>
+  </div>
+
+</body>
 </html>
