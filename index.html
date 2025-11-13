@@ -11,11 +11,43 @@
   </head>
   <body>
     <h1>Env:QA14 Account:123ABC</h1>
-<h2>Free weekly Collection &amp; Return using our own fully insured vehicles</h2> <p>Check to see if we cover your postcode</p> <div class="error-message" style="color:white;"></div><form id="free-collection-availability-checker-form" class="row contact-form contact-gray">
+<div class="container"> <div id="free-collection-check-footer-area" data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1631867189259 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-12 text-lg-center"><div class="vc_column-inner"><div class="wpb_wrapper"> <div class="free-collection-availability-checker"> <div class="free-collection-information"> <h2>Free weekly Collection &amp; Return using our own fully insured vehicles</h2> <p>Check to see if we cover your postcode</p> <div class="error-message" style="color:white;"></div><form id="free-collection-availability-checker-form" class="row contact-form contact-gray">
 <input type="text" id="postcode" name="postcode" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="Postcode*" required>
 <input type="number" id="assets" min="1" step="1" name="assets" value="" size="40" class="" aria-required="true" aria-invalid="false" placeholder="Approx Qty*" required>
 <a class="btn btn-solid btn-md border-thin check-availability-check-btn"><span>Check Now</span></a>
 </form>
+<div class="form-cover-layer"></div><div class="form-loading-bar"></div><p class="terms">Non-residential addresses only. View our <a target="_blank" href="/price-list/" style="text-decoration: underline; color: #ffffff;">price list</a></p></div><img decoding="async" class="free-collection-image" src="/wp-content/uploads/2021/09/cal-collection.jpg"/></div><script>jQuery(function(){
+jQuery('.check-availability-check-btn').on('click', function(event){
+jQuery("#free-collection-availability-checker-form").validate({
+debug: true,
+rules: {
+postcode: {
+minlength: 2,
+required: true,
+},
+assets: {
+required: true,
+digits: true
+},
+}});
+if(jQuery("#free-collection-availability-checker-form").valid()){
+jQuery('.free-collection-information').addClass('page-is-changing');
+let postcode=jQuery('#postcode').val().trim();
+let assets=jQuery('#assets').val();
+jQuery.ajax({
+type:"post",
+dataType:"html",
+url:"https://www.calibrate.co.uk/wp-admin/admin-ajax.php",
+data: {action: "pass_calibrationquote_check_availability", postcode:postcode, assets:assets},
+success: function(response){
+jQuery('.free-collection-information').html(response);
+jQuery('.free-collection-information').removeClass('page-is-changing');
+window.history.pushState({path: window.location},'',window.location);
+}});
+}else{
+jQuery('.error-message').text('***Please complete the form');
+}});
+});</script>
 	  
     <p class="has-text-align-center"><strong>0001</strong></p>
     <p>Swap Target: 678<span>-818</span>-0001<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180001">678-818-0001</a></p>
