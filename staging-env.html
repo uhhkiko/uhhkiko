@@ -1,16 +1,45 @@
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The web site of uhhkiko</title>
+	  <a href="prod-env.html">Production Environment</a>
+	  <a href="staging-env.html">Staging Environment</a>
+	  <a href="index.html">QA14 Environment</a>
+	  <a href="qa8-env.html">QA8 Environment</a>
+	  <a href="qa2-env.html">QA2 Environment</a>
+	  <a href="qa1-env.html">QA1 Environment</a>
     <!-- The style.css file allows you to change the look of your web pages.
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
   </head>
   <body>
-    <h1>Welcome to my Website!</h1>
+    <h1>Env:Staging Account:123ABC</h1>
 
+	  <h2><strong>Not-a-form Form</strong></h2>
+	  <form method="POST" action="">
+    <div>
+        <label for="zipcode">Zip Code:</label>
+        <input type="text" id="zipcode" name="zipcode" required 
+               placeholder="e.g., 90210" pattern="^\d{5}(?:[-\s]\d{4})?$">
+        <small> (5 or 9 digits)</small>
+    </div>
+    
+    <br>
+    
+    <div>
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required 
+               min="1" value="1">
+    </div>
+    
+    <br>
+    
+    <button type="submit">Submit Order</button>
+</form>
+	  
     <p class="has-text-align-center"><strong>0001</strong></p>
     <p>Swap Target: 678<span>-818</span>-0001<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180001">678-818-0001</a></p>
     
@@ -19,22 +48,98 @@
     
     <p class="has-text-align-center"><strong>0003</strong></p>
     <p>Swap Target: 678<span>-818</span>-0003<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180003">678-818-0003</a></p>
+	
+	<h2><strong>Custom Form</strong></h2>
+<div id="cr-form-FOR019a984122f071aa9930e0fb608267a8"></div>
     
-    <p class="has-text-align-center"><strong>0004</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0004<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180004">678-818-0004</a></p>
+	  
+	  <h2><strong>External Form</strong></h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Contact Form</title>
+    <style>
+        /* Optional basic styling for better readability */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
+        }
+        textarea {
+            resize: vertical; /* Allows user to resize vertically */
+            min-height: 100px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Contact Us</h2>
     
-    <p class="has-text-align-center"><strong>0005</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0005<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180005">678-818-0005</a></p>
-    
-    <p class="has-text-align-center"><strong>0006</strong></p>
-    <p>Swap Target: 678<span>-818</span>-0006<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180006">678-818-0006</a></p>
+    <form action="/submit-form-placeholder" method="POST">
+        
+        <label for="name">Name</label>
+        <input type="text" id="name" name="user_name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="user_email" required>
+        
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="user_phone">
+        
+        <label for="discussion">Anything you want to discuss?</label>
+        <textarea id="discussion" name="user_discussion" rows="4"></textarea>
+        
+        <button type="submit">Submit Inquiry</button>
+        
+    </form>
+</div>
 
-
-    <p class="has-text-align-center"><strong>External Form - Typeform</strong></p>
-
-		  
+</body>
+</html>
     <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
-    
-    <script type="text/javascript" src="//swappy.blackwood-mountain.eks.qa-callrail.com/companies/577025309/a914df63a736dcbd5daf/12/swap.js"></script>  
+
+<script type="text/javascript" src="//js.staging-callrail.com/companies/459100322/f417fed263e15b5618d5/12/swap.js"></script>        
+	  
   </body>
+
+	
 </html>
