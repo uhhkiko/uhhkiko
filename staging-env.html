@@ -14,6 +14,13 @@
          If you include the next line in all your web pages, they will all share the same look.
          This makes it easier to make new pages for your site. -->
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+	  <style>
+        .container {
+            max-width: 600px; 
+            padding: 20px; 
+            margin: 0 auto; 
+        }
+    </style>
   </head>
   <body>
     <h1>Env:Staging Account:123ABC</h1>
@@ -55,87 +62,17 @@
     
 	  
 	  <h2><strong>External Form</strong></h2>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Contact Form</title>
-    <style>
-        /* Optional basic styling for better readability */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
-        }
-        textarea {
-            resize: vertical; /* Allows user to resize vertically */
-            min-height: 100px;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-    </style>
-</head>
-<body>
 
 <div class="container">
-    <h2>Contact Us</h2>
-    
-    <form action="https://webhook.site/923daf46-3371-4d06-aa63-1cc6cab6c491" method="POST">
-        
-        <label for="name">Name</label>
-        <input type="text" id="name" name="user_name" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user_email" required>
-        
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="user_phone">
-        
-        <label for="discussion">Anything you want to discuss?</label>
-        <textarea id="discussion" name="user_discussion" rows="4"></textarea>
-        
-        <button type="submit">Submit Inquiry</button>
-        
-    </form>
-</div>
-
-</body>
-</html>
+	  <form method="POST" action="https://webhook.site/923daf46-3371-4d06-aa63-1cc6cab6c491">
+    <div>
+        <label for="name">Name:</label> 
+		<label for="email">Email:</label>
+    </div>
+    <button type="submit">Submit Order</button>
+</form>
+	  </div>
+	  
     <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
 
 <script type="text/javascript" src="//js.staging-callrail.com/companies/459100322/f417fed263e15b5618d5/12/swap.js"></script>        
