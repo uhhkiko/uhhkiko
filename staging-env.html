@@ -20,19 +20,14 @@
 
 	  <h2><strong>Anonymous Form</strong></h2>
     <p><strong>This submission should NOT push to the Callrail account.</strong></p>
-	  <form method="POST" action=""
-		  max-width: 600px; 
-		  padding: 20px;
-		  border: 1px solid #ccc;
-		  border-radius: 5px;>
+	  
+	  <div class="container">
+	  <form method="POST" action="">
     <div>
-        <label for="zipcode">Zip Code:</label>
+        <label for="zipcode">Zip Code:</label> <small> (5 or 9 digits)</small>
         <input type="text" id="zipcode" name="zipcode" required 
                placeholder="e.g., 90210" pattern="^\d{5}(?:[-\s]\d{4})?$">
-        <small> (5 or 9 digits)</small>
     </div>
-    
-    <br>
     
     <div>
         <label for="quantity">Quantity:</label>
@@ -40,10 +35,9 @@
                min="1" value="1">
     </div>
     
-    <br>
-    
     <button type="submit">Submit Order</button>
 </form>
+	  </div>
 	  
     <p class="has-text-align-center"><strong>0001</strong></p>
     <p>Swap Target: 678<span>-818</span>-0001<br><strong>This is the Swapping Tracker:</strong> <a href="tel:6788180001">678-818-0001</a></p>
