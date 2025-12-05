@@ -60,87 +60,147 @@
     
 	  
 	  <h2><strong>External Form</strong></h2>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Contact Form</title>
-    <style>
-        /* Optional basic styling for better readability */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't affect overall width */
-        }
-        textarea {
-            resize: vertical; /* Allows user to resize vertically */
-            min-height: 100px;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-    </style>
-</head>
-<body>
+<form>
+	<!-- START of the correctly integrated form -->
+	        <div class="flex items-center justify-center">
+	            <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
+	                <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Contact Us</h2>
+	                <p class="text-center text-gray-500 mb-8">Please fill out this form and we'll get back to you soon.</p>
 
-<div class="container">
-    <h2>Contact Us</h2>
-    
-    <form action="/submit-form-placeholder" method="POST">
-        
-        <label for="name">Name</label>
-        <input type="text" id="name" name="user_name" required>
-        
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user_email" required>
-        
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="user_phone">
-        
-        <label for="discussion">Anything you want to discuss?</label>
-        <textarea id="discussion" name="user_discussion" rows="4"></textarea>
-        
-        <button type="submit">Submit Inquiry</button>
-        
-    </form>
-</div>
+	                <form id="contactForm" class="space-y-6">
+	                    <!-- First and Last Name -->
+	                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+	                        <div>
+	                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+	                            <input type="text" id="firstName" name="firstName" placeholder="Jane" required
+	                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+	                        </div>
+	                        <div>
+	                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+	                            <input type="text" id="lastName" name="lastName" placeholder="Doe" required
+	                                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+	                        </div>
+	                    </div>
+	                    <!-- Email -->
+	                    <div>
+	                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+	                        <input type="email" id="email" name="email" placeholder="jane.doe@example.com" required
+	                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+	                    </div>
+	                    <!-- Additional Details -->
+	                    <div>
+	                        <label for="additionalDetails" class="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
+	                        <input type="text" id="additionalDetails" name="additionalDetails" placeholder="blahblahblah" required
+	                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+	                    </div>
+	                    <!-- Submit Button -->
+	                    <button type="submit"
+	                        class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 shadow-lg transform hover:scale-105">
+	                        Submit
+	                    </button>
+	                </form>
+	                <!-- Message Box for Feedback -->
+	                <div id="messageBox" class="mt-6 hidden p-4 rounded-lg text-white font-medium" role="alert">
+	                    <p id="messageText"></p>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- END of the correctly integrated form -->
+	        </form>
 
-</body>
-</html>
+	        <!-- Message Box for Feedback -->
+	        <div id="messageBox" class="mt-6 hidden p-4 rounded-lg text-white font-medium" role="alert">
+	            <p id="messageText"></p>
+	        </div>
+	    </div>
+
+	    <script>
+	        // Get the form and the message box elements
+	        const contactForm = document.getElementById('contactForm');
+	        const messageBox = document.getElementById('messageBox');
+	        const messageText = document.getElementById('messageText');
+
+	        // Listen for the form submission
+	        contactForm.addEventListener('submit', function(event) {
+	            // Prevent the default form submission behavior
+	            event.preventDefault();
+
+	            // Simulate a successful form submission
+	            console.log("Form submitted successfully!");
+
+	            // Display a success message
+	            messageBox.classList.remove('hidden', 'bg-red-500');
+	            messageBox.classList.add('bg-green-500', 'flex', 'items-center', 'justify-center');
+	            messageText.textContent = 'Thank you! Your submission has been received.';
+				
+	        });
+	    </script>
+
+	</html>
+
+	</form>
+	
+	<form>
+	<!-- START of the correctly integrated form -->
+	        <div class="flex items-center justify-center">
+	            <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-lg">
+	                <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Anon Form</h2>
+	                <p class="text-center text-gray-500 mb-8">This submission should not appear in CallRail.</p>
+
+	                <form id="AnonForm" class="space-y-6">
+	                    
+	                    <!-- Additional Details -->
+	                    <div>
+	                        <label for="additionalDetails" class="block text-sm font-medium text-gray-700 mb-1">Additional Details</label>
+	                        <input type="text" id="additionalDetails" name="additionalDetails" placeholder="blahblahblah" required
+	                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+	                    </div>
+	                    <!-- Submit Button -->
+	                    <button type="submit"
+	                        class="w-full bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 shadow-lg transform hover:scale-105">
+	                        Submit
+	                    </button>
+	                </form>
+	                <!-- Message Box for Feedback -->
+	                <div id="messageBox" class="mt-6 hidden p-4 rounded-lg text-white font-medium" role="alert">
+	                    <p id="messageText"></p>
+	                </div>
+	            </div>
+	        </div>
+	        <!-- END of the correctly integrated form -->
+	        </form>
+
+	        <!-- Message Box for Feedback -->
+	        <div id="messageBox" class="mt-6 hidden p-4 rounded-lg text-white font-medium" role="alert">
+	            <p id="messageText"></p>
+	        </div>
+	    </div>
+
+	    <script>
+	        // Get the form and the message box elements
+	        const anonForm = document.getElementById('anonForm');
+	        const messageBox = document.getElementById('messageBox');
+	        const messageText = document.getElementById('messageText');
+
+	        // Listen for the form submission
+	        contactForm.addEventListener('submit', function(event) {
+	            // Prevent the default form submission behavior
+	            event.preventDefault();
+
+	            // Simulate a successful form submission
+	            console.log("Form submitted successfully!");
+
+	            // Display a success message
+	            messageBox.classList.remove('hidden', 'bg-red-500');
+	            messageBox.classList.add('bg-green-500', 'flex', 'items-center', 'justify-center');
+	            messageText.textContent = 'Thank you! Your submission has been received.';
+
+	        });
+	    </script>
+
+	</html>
+
+	</form>
     <p>To learn more HTML/CSS, check out these <a href="https://neocities.org/tutorials">tutorials</a>!</p>
 
 <script type="text/javascript" src="//swappy.blackwood-mountain.eks.qa-callrail.com/companies/231782002/d10f6923f0ced7ded513/12/swap.js"></script>         
